@@ -1,0 +1,111 @@
+[Mon Apr 03 11:07:00.247166 2017] [wsgi:error] [pid 21023:tid 140150107993856] [remote 127.0.0.1:24132] [2017-04-03 11:07:00,244] ERROR in app: Exception on / [GET]
+[Mon Apr 03 11:07:00.247195 2017] [wsgi:error] [pid 21023:tid 140150107993856] [remote 127.0.0.1:24132] Traceback (most recent call last):
+[Mon Apr 03 11:07:00.247199 2017] [wsgi:error] [pid 21023:tid 140150107993856] [remote 127.0.0.1:24132]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1982, in wsgi_app
+[Mon Apr 03 11:07:00.247202 2017] [wsgi:error] [pid 21023:tid 140150107993856] [remote 127.0.0.1:24132]     response = self.full_dispatch_request()
+[Mon Apr 03 11:07:00.247204 2017] [wsgi:error] [pid 21023:tid 140150107993856] [remote 127.0.0.1:24132]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1614, in full_dispatch_request
+[Mon Apr 03 11:07:00.247207 2017] [wsgi:error] [pid 21023:tid 140150107993856] [remote 127.0.0.1:24132]     rv = self.handle_user_exception(e)
+[Mon Apr 03 11:07:00.247209 2017] [wsgi:error] [pid 21023:tid 140150107993856] [remote 127.0.0.1:24132]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1517, in handle_user_exception
+[Mon Apr 03 11:07:00.247211 2017] [wsgi:error] [pid 21023:tid 140150107993856] [remote 127.0.0.1:24132]     reraise(exc_type, exc_value, tb)
+[Mon Apr 03 11:07:00.247213 2017] [wsgi:error] [pid 21023:tid 140150107993856] [remote 127.0.0.1:24132]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Mon Apr 03 11:07:00.247215 2017] [wsgi:error] [pid 21023:tid 140150107993856] [remote 127.0.0.1:24132]     raise value
+[Mon Apr 03 11:07:00.247217 2017] [wsgi:error] [pid 21023:tid 140150107993856] [remote 127.0.0.1:24132]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1612, in full_dispatch_request
+[Mon Apr 03 11:07:00.247219 2017] [wsgi:error] [pid 21023:tid 140150107993856] [remote 127.0.0.1:24132]     rv = self.dispatch_request()
+[Mon Apr 03 11:07:00.247221 2017] [wsgi:error] [pid 21023:tid 140150107993856] [remote 127.0.0.1:24132]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1598, in dispatch_request
+[Mon Apr 03 11:07:00.247223 2017] [wsgi:error] [pid 21023:tid 140150107993856] [remote 127.0.0.1:24132]     return self.view_functions[rule.endpoint](**req.view_args)
+[Mon Apr 03 11:07:00.247225 2017] [wsgi:error] [pid 21023:tid 140150107993856] [remote 127.0.0.1:24132]   File "/var/www/app.salvaj.es/flaskapp/myapp.py", line 11, in hello_world
+[Mon Apr 03 11:07:00.247226 2017] [wsgi:error] [pid 21023:tid 140150107993856] [remote 127.0.0.1:24132]     %s''' % datetime.datetime.now().ctime()
+[Mon Apr 03 11:07:00.247230 2017] [wsgi:error] [pid 21023:tid 140150107993856] [remote 127.0.0.1:24132] NameError: name 'datetime' is not defined
+[Mon Apr 03 11:07:00.247243 2017] [wsgi:error] [pid 21023:tid 140150107993856] [remote 127.0.0.1:24132] 
+[Mon Apr 03 14:38:29.407403 2017] [wsgi:error] [pid 22352:tid 140150116386560] [remote 127.0.0.1:24132] mod_wsgi (pid=22352): Target WSGI script '/var/www/app.salvaj.es/flaskapp/controller.wsgi' cannot be loaded as Python module.
+[Mon Apr 03 14:38:29.407457 2017] [wsgi:error] [pid 22352:tid 140150116386560] [remote 127.0.0.1:24132] mod_wsgi (pid=22352): Exception occurred processing WSGI script '/var/www/app.salvaj.es/flaskapp/controller.wsgi'.
+[Mon Apr 03 14:38:29.411632 2017] [wsgi:error] [pid 22352:tid 140150116386560] [remote 127.0.0.1:24132] Traceback (most recent call last):
+[Mon Apr 03 14:38:29.411655 2017] [wsgi:error] [pid 22352:tid 140150116386560] [remote 127.0.0.1:24132]   File "/var/www/app.salvaj.es/flaskapp/controller.wsgi", line 8, in <module>
+[Mon Apr 03 14:38:29.411659 2017] [wsgi:error] [pid 22352:tid 140150116386560] [remote 127.0.0.1:24132]     from myapp import app as application
+[Mon Apr 03 14:38:29.411671 2017] [wsgi:error] [pid 22352:tid 140150116386560] [remote 127.0.0.1:24132]   File "/var/www/app.salvaj.es/flaskapp/myapp.py", line 27
+[Mon Apr 03 14:38:29.411678 2017] [wsgi:error] [pid 22352:tid 140150116386560] [remote 127.0.0.1:24132]     def form_data()
+[Mon Apr 03 14:38:29.411704 2017] [wsgi:error] [pid 22352:tid 140150116386560] [remote 127.0.0.1:24132]                   ^
+[Mon Apr 03 14:38:29.411723 2017] [wsgi:error] [pid 22352:tid 140150116386560] [remote 127.0.0.1:24132] SyntaxError: invalid syntax
+[Mon Apr 03 14:40:37.733225 2017] [wsgi:error] [pid 22462:tid 140150116386560] [remote 127.0.0.1:24132] mod_wsgi (pid=22462): Target WSGI script '/var/www/app.salvaj.es/flaskapp/controller.wsgi' cannot be loaded as Python module.
+[Mon Apr 03 14:40:37.733286 2017] [wsgi:error] [pid 22462:tid 140150116386560] [remote 127.0.0.1:24132] mod_wsgi (pid=22462): Exception occurred processing WSGI script '/var/www/app.salvaj.es/flaskapp/controller.wsgi'.
+[Mon Apr 03 14:40:37.737645 2017] [wsgi:error] [pid 22462:tid 140150116386560] [remote 127.0.0.1:24132] Traceback (most recent call last):
+[Mon Apr 03 14:40:37.737669 2017] [wsgi:error] [pid 22462:tid 140150116386560] [remote 127.0.0.1:24132]   File "/var/www/app.salvaj.es/flaskapp/controller.wsgi", line 8, in <module>
+[Mon Apr 03 14:40:37.737673 2017] [wsgi:error] [pid 22462:tid 140150116386560] [remote 127.0.0.1:24132]     from myapp import app as application
+[Mon Apr 03 14:40:37.737685 2017] [wsgi:error] [pid 22462:tid 140150116386560] [remote 127.0.0.1:24132]   File "/var/www/app.salvaj.es/flaskapp/myapp.py", line 27
+[Mon Apr 03 14:40:37.737692 2017] [wsgi:error] [pid 22462:tid 140150116386560] [remote 127.0.0.1:24132]     def form_data()
+[Mon Apr 03 14:40:37.737707 2017] [wsgi:error] [pid 22462:tid 140150116386560] [remote 127.0.0.1:24132]                   ^
+[Mon Apr 03 14:40:37.737713 2017] [wsgi:error] [pid 22462:tid 140150116386560] [remote 127.0.0.1:24132] SyntaxError: invalid syntax
+[Mon Apr 03 14:41:18.670716 2017] [wsgi:error] [pid 22594:tid 140150116386560] [remote 127.0.0.1:24132] mod_wsgi (pid=22594): Target WSGI script '/var/www/app.salvaj.es/flaskapp/controller.wsgi' cannot be loaded as Python module.
+[Mon Apr 03 14:41:18.670774 2017] [wsgi:error] [pid 22594:tid 140150116386560] [remote 127.0.0.1:24132] mod_wsgi (pid=22594): Exception occurred processing WSGI script '/var/www/app.salvaj.es/flaskapp/controller.wsgi'.
+[Mon Apr 03 14:41:18.675083 2017] [wsgi:error] [pid 22594:tid 140150116386560] [remote 127.0.0.1:24132] Traceback (most recent call last):
+[Mon Apr 03 14:41:18.675109 2017] [wsgi:error] [pid 22594:tid 140150116386560] [remote 127.0.0.1:24132]   File "/var/www/app.salvaj.es/flaskapp/controller.wsgi", line 8, in <module>
+[Mon Apr 03 14:41:18.675113 2017] [wsgi:error] [pid 22594:tid 140150116386560] [remote 127.0.0.1:24132]     from myapp import app as application
+[Mon Apr 03 14:41:18.675125 2017] [wsgi:error] [pid 22594:tid 140150116386560] [remote 127.0.0.1:24132]   File "/var/www/app.salvaj.es/flaskapp/myapp.py", line 27
+[Mon Apr 03 14:41:18.675132 2017] [wsgi:error] [pid 22594:tid 140150116386560] [remote 127.0.0.1:24132]     def form_data()
+[Mon Apr 03 14:41:18.675148 2017] [wsgi:error] [pid 22594:tid 140150116386560] [remote 127.0.0.1:24132]                   ^
+[Mon Apr 03 14:41:18.675154 2017] [wsgi:error] [pid 22594:tid 140150116386560] [remote 127.0.0.1:24132] SyntaxError: invalid syntax
+[Mon Apr 03 14:45:45.857952 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876] [2017-04-03 14:45:45,850] ERROR in app: Exception on /result [POST]
+[Mon Apr 03 14:45:45.857973 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876] Traceback (most recent call last):
+[Mon Apr 03 14:45:45.857977 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1982, in wsgi_app
+[Mon Apr 03 14:45:45.857979 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]     response = self.full_dispatch_request()
+[Mon Apr 03 14:45:45.857982 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1614, in full_dispatch_request
+[Mon Apr 03 14:45:45.857984 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]     rv = self.handle_user_exception(e)
+[Mon Apr 03 14:45:45.857992 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1517, in handle_user_exception
+[Mon Apr 03 14:45:45.857994 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]     reraise(exc_type, exc_value, tb)
+[Mon Apr 03 14:45:45.857996 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Mon Apr 03 14:45:45.857998 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]     raise value
+[Mon Apr 03 14:45:45.857999 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1612, in full_dispatch_request
+[Mon Apr 03 14:45:45.858001 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]     rv = self.dispatch_request()
+[Mon Apr 03 14:45:45.858003 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1598, in dispatch_request
+[Mon Apr 03 14:45:45.858005 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]     return self.view_functions[rule.endpoint](**req.view_args)
+[Mon Apr 03 14:45:45.858007 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]   File "/var/www/app.salvaj.es/flaskapp/myapp.py", line 36, in result
+[Mon Apr 03 14:45:45.858009 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]     return render_template("result.html", result = result)
+[Mon Apr 03 14:45:45.858011 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]   File "/usr/local/lib/python3.5/dist-packages/flask/templating.py", line 134, in render_template
+[Mon Apr 03 14:45:45.858013 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]     context, ctx.app)
+[Mon Apr 03 14:45:45.858014 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]   File "/usr/local/lib/python3.5/dist-packages/flask/templating.py", line 116, in _render
+[Mon Apr 03 14:45:45.858016 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]     rv = template.render(context)
+[Mon Apr 03 14:45:45.858018 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]   File "/usr/lib/python3/dist-packages/jinja2/environment.py", line 989, in render
+[Mon Apr 03 14:45:45.858020 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]     return self.environment.handle_exception(exc_info, True)
+[Mon Apr 03 14:45:45.858022 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]   File "/usr/lib/python3/dist-packages/jinja2/environment.py", line 754, in handle_exception
+[Mon Apr 03 14:45:45.858024 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]     reraise(exc_type, exc_value, tb)
+[Mon Apr 03 14:45:45.858026 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]   File "/usr/lib/python3/dist-packages/jinja2/_compat.py", line 37, in reraise
+[Mon Apr 03 14:45:45.858027 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]     raise value.with_traceback(tb)
+[Mon Apr 03 14:45:45.858029 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]   File "/var/www/app.salvaj.es/flaskapp/templates/result.html", line 6, in top-level template code
+[Mon Apr 03 14:45:45.858031 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876]     {% for key, value in result.iteritems() %}
+[Mon Apr 03 14:45:45.858034 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876] jinja2.exceptions.UndefinedError: 'werkzeug.datastructures.ImmutableMultiDict object' has no attribute 'iteritems'
+[Mon Apr 03 14:45:45.858048 2017] [wsgi:error] [pid 22732:tid 140150116386560] [remote 127.0.0.1:23876] 
+[Mon Apr 03 16:19:49.324860 2017] [wsgi:error] [pid 22910:tid 140150099601152] [remote 213.99.35.10:23876] [2017-04-03 16:19:49,322] ERROR in app: Exception on /result [GET]
+[Mon Apr 03 16:19:49.324886 2017] [wsgi:error] [pid 22910:tid 140150099601152] [remote 213.99.35.10:23876] Traceback (most recent call last):
+[Mon Apr 03 16:19:49.324891 2017] [wsgi:error] [pid 22910:tid 140150099601152] [remote 213.99.35.10:23876]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1982, in wsgi_app
+[Mon Apr 03 16:19:49.324893 2017] [wsgi:error] [pid 22910:tid 140150099601152] [remote 213.99.35.10:23876]     response = self.full_dispatch_request()
+[Mon Apr 03 16:19:49.324896 2017] [wsgi:error] [pid 22910:tid 140150099601152] [remote 213.99.35.10:23876]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1615, in full_dispatch_request
+[Mon Apr 03 16:19:49.324898 2017] [wsgi:error] [pid 22910:tid 140150099601152] [remote 213.99.35.10:23876]     return self.finalize_request(rv)
+[Mon Apr 03 16:19:49.324900 2017] [wsgi:error] [pid 22910:tid 140150099601152] [remote 213.99.35.10:23876]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1630, in finalize_request
+[Mon Apr 03 16:19:49.324902 2017] [wsgi:error] [pid 22910:tid 140150099601152] [remote 213.99.35.10:23876]     response = self.make_response(rv)
+[Mon Apr 03 16:19:49.324904 2017] [wsgi:error] [pid 22910:tid 140150099601152] [remote 213.99.35.10:23876]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1725, in make_response
+[Mon Apr 03 16:19:49.324906 2017] [wsgi:error] [pid 22910:tid 140150099601152] [remote 213.99.35.10:23876]     raise ValueError('View function did not return a response')
+[Mon Apr 03 16:19:49.324910 2017] [wsgi:error] [pid 22910:tid 140150099601152] [remote 213.99.35.10:23876] ValueError: View function did not return a response
+[Mon Apr 03 16:19:49.324922 2017] [wsgi:error] [pid 22910:tid 140150099601152] [remote 213.99.35.10:23876] 
+[Mon Apr 03 16:20:18.041893 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 213.99.35.10:23876] [2017-04-03 16:20:18,041] ERROR in app: Exception on /result [GET]
+[Mon Apr 03 16:20:18.041921 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 213.99.35.10:23876] Traceback (most recent call last):
+[Mon Apr 03 16:20:18.041924 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 213.99.35.10:23876]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1982, in wsgi_app
+[Mon Apr 03 16:20:18.041927 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 213.99.35.10:23876]     response = self.full_dispatch_request()
+[Mon Apr 03 16:20:18.041929 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 213.99.35.10:23876]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1615, in full_dispatch_request
+[Mon Apr 03 16:20:18.041931 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 213.99.35.10:23876]     return self.finalize_request(rv)
+[Mon Apr 03 16:20:18.041933 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 213.99.35.10:23876]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1630, in finalize_request
+[Mon Apr 03 16:20:18.041936 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 213.99.35.10:23876]     response = self.make_response(rv)
+[Mon Apr 03 16:20:18.041938 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 213.99.35.10:23876]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1725, in make_response
+[Mon Apr 03 16:20:18.041940 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 213.99.35.10:23876]     raise ValueError('View function did not return a response')
+[Mon Apr 03 16:20:18.041943 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 213.99.35.10:23876] ValueError: View function did not return a response
+[Mon Apr 03 16:20:18.041955 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 213.99.35.10:23876] 
+[Mon Apr 03 17:36:12.004910 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 146.158.138.55:23876] [2017-04-03 17:36:12,004] ERROR in app: Exception on /result [GET]
+[Mon Apr 03 17:36:12.004942 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 146.158.138.55:23876] Traceback (most recent call last):
+[Mon Apr 03 17:36:12.004945 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 146.158.138.55:23876]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1982, in wsgi_app
+[Mon Apr 03 17:36:12.004947 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 146.158.138.55:23876]     response = self.full_dispatch_request()
+[Mon Apr 03 17:36:12.004949 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 146.158.138.55:23876]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1615, in full_dispatch_request
+[Mon Apr 03 17:36:12.004951 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 146.158.138.55:23876]     return self.finalize_request(rv)
+[Mon Apr 03 17:36:12.004953 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 146.158.138.55:23876]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1630, in finalize_request
+[Mon Apr 03 17:36:12.004955 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 146.158.138.55:23876]     response = self.make_response(rv)
+[Mon Apr 03 17:36:12.004957 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 146.158.138.55:23876]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1725, in make_response
+[Mon Apr 03 17:36:12.004959 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 146.158.138.55:23876]     raise ValueError('View function did not return a response')
+[Mon Apr 03 17:36:12.004962 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 146.158.138.55:23876] ValueError: View function did not return a response
+[Mon Apr 03 17:36:12.004974 2017] [wsgi:error] [pid 22910:tid 140150116386560] [remote 146.158.138.55:23876] 

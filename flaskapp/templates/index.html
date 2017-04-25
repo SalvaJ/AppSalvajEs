@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  {# Plantilla formato Jinja2 #}
+  
+  <head>
+		<meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>{{url}} LANDING PAGE</title>  
+  </head>
+
+  <body>
+    <h1>WEBAPP DE salvaj.es</h1>
+    <p>Hola, esta WebApp está desarrollada en Pyphon-Flask.</p>
+    <p>El servidor web es Apache2 con mod_wsgi instalado sobre Linux Ubuntu Server 16.04 virtualizado en una instancia EC2 tipo t2.micro de AWS.</p>
+    <div>
+      <p>Listado de tecnologías utilizadas en este proyecto:</p>
+      <ol>
+        <li>Del lado del SERVIDOR:</li>
+        <ul>
+          <li>GNU/Linux</li>
+          <li>Apache2</li>
+          <li>DNS</li>
+          <li>HTTP</li>
+          <li>FTP</li>
+          <li>SSH</li>
+          <li>Python3</li>
+          <li>Flask</li>
+        </ul>
+        <li>Del lado del CLIENTE:</li>
+        <ul>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>AngularJS</li>
+          <li>AJAX</li>
+          <li>JSON</li>
+        </ul>
+      </ol>
+    </div>
+    <p>Servertime: {{servertime}}<p>
+    <p>&copy; 2017 by {{user.name}}</p>
+  </body>
+
+</html>

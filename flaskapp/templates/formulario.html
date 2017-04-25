@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='style.css') }}">
+    <style>
+      input.ng-invalid {
+        background-color: pink ;
+      }
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <title>{{url}} FORM PAGE</title>
+  </head>
+
+  <body ng-app="miApp">
+    <div ng-controller="dataForm">
+      <form action = "http://app.salvaj.es/result" method = "POST">
+        <p>COMUNIDAD AUTÓNOMA: <input type = "text" name = "comunidad" ng-model = "nComunidad" required/></p>
+        <p>PRECIO:  <input type = "text" name = "precio" ng-model = "nPrecio" required/></p>
+        <p>FECHA: <input type = "text" name = "fecha" ng-model = "nFecha" required/></p>
+        <p><input type = "submit" value = "CALCULAR" /></p>
+      </form>
+      <div>
+        <p>DATOS A ENVIAR: {{'{{nComunidad}}'}} </p>
+        {% raw %}
+          <p>DATOS A ENVIAR: {{nPrecio}} </p>
+          <p>DATOS A ENVIAR: {{nFecha}} </p>
+          <p>CADENA TOTAL: {{cadenaTotal()}} </p>
+        {% endraw %}
+      </div>
+    </div>  
+    
+    <div ng-controller="miAjax">
+      <p>{{'{{contenido}}'}}</p>
+      <p>{{'{{status}}'}}</p>
+    </div>
+    
+    <script>
+     var app = angular.module('miApp', []);
+ 
+     app.controller('dataForm', function($scope) {
+        $scope.nComunidad = "";
+        $scope.nPrecio = "";
+        $scope.nFecha = "";
+        $scope.cadenaTotal = function() {
+          return $scope.nComunidad + "," + $scope.nPrecio + "," + $scope.nFecha;
+          };
+        });
+        
+      app.controller('miAjax', function($scope, $http) {
+        $http.get("index")
+        .then(function(response) {
+            $scope.contenido = response.data;
+            $scope.status = response.status;
+        }, function(response) {
+            $scope.contenido = "Ha abido un problema de AJAX";
+            $scope.status = response.status;
+        });
+      });        
+    </script>
+  </body>
+
+</html>

@@ -50,7 +50,7 @@ coverage.xml
 *.pot
 
 # Django stuff:
-*.log
+# *.log	LO HE COMENTADO PORQUE NO RESPALDABA LOS LOGS DE APACHE
 local_settings.py
 
 # Flask stuff:
