@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
-  {# Plantilla formato Jinja2 #}
+  {# Plantilla formato Jinja2 para Flask #}
   
   <head>
-		<meta charset="utf-8">
+    <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <title>{{url}} LANDING PAGE</title>  
   </head>
 
   <body>
-    <h1>WEBAPP DE salvaj.es</h1>
-    <p>Hola, esta WebApp está desarrollada en Pyphon-Flask.</p>
-    <p>El servidor web es Apache2 con mod_wsgi instalado sobre Linux Ubuntu Server 16.04 virtualizado en una instancia EC2 tipo t2.micro de AWS.</p>
+    <h1>WEBAPP of site salvaj.es</h1>
+    <p>Hi, this WebApp is developed with Python-Flask.  It's running on an Apache2 with mod_wsgi installed on a Linux Ubuntu Server 16.04 virtualized on an EC2 type t2.micro instance of AWS.</p>
+    <p>First of all, this project has a learning purpose.  Furthermore, this project will offer a tool to estimate the costs of <strong>real estate acquisition taxes and fees in Spain.</strong></p>
     <div>
-      <p>Listado de tecnologías utilizadas en este proyecto:</p>
+      <p><ins>List of technologies implemented or used in this project:</ins></p>
       <ol>
-        <li>Del lado del SERVIDOR:</li>
+        <li>SERVER-SIDE:</li>
         <ul>
           <li>GNU/Linux</li>
           <li>Apache2</li>
@@ -23,10 +23,11 @@
           <li>HTTP</li>
           <li>FTP</li>
           <li>SSH</li>
+          <li>Git</li>
           <li>Python3</li>
           <li>Flask</li>
         </ul>
-        <li>Del lado del CLIENTE:</li>
+        <li>CLIENT-SIDE:</li>
         <ul>
           <li>HTML5</li>
           <li>CSS3</li>
