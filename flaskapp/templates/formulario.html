@@ -19,21 +19,27 @@
         <p>COMUNIDAD AUTÓNOMA: <input type = "text" name = "comunidad" ng-model = "nComunidad" required/></p>
         <p>PRECIO:  <input type = "text" name = "precio" ng-model = "nPrecio" required/></p>
         <p>FECHA: <input type = "text" name = "fecha" ng-model = "nFecha" required/></p>
-        <p><input type = "submit" value = "CALCULAR" /></p>
+        <fieldset>
+          <legend>Vivienda: </legend>
+          <input type="radio" name="vivienda" ng-model="nVivienda" value="nueva"> NUEVA <br>
+          <input type="radio" name="vivienda" ng-model="nVivienda" value="usada" checked> USADA 
+        </fieldset>
+        <p><input type = "submit" value = "CALCULAR" /><button ng-click="dataForm.$rollbackViewValue(); nComunidad=''; nPrecio=''; nFecha=''; nVivienda='usada'; ">BORRAR</button></p>
       </form>
       <div>
-        <p>DATOS A ENVIAR: {{'{{nComunidad}}'}} </p>
+        <p>COMUNIDAD A ENVIAR: {{'{{nComunidad}}'}} </p>
         {% raw %}
-          <p>DATOS A ENVIAR: {{nPrecio}} </p>
-          <p>DATOS A ENVIAR: {{nFecha}} </p>
+          <p>PRECIO A ENVIAR: {{nPrecio}} </p>
+          <p>FECHA A ENVIAR: {{nFecha}} </p>
           <p>CADENA TOTAL: {{cadenaTotal()}} </p>
         {% endraw %}
       </div>
     </div>  
     
     <div ng-controller="miAjax">
-      <p>{{'{{contenido}}'}}</p>
-      <p>{{'{{status}}'}}</p>
+      <button type='button' id='ajax' ng-click='recibir()'>RECIBIR DATOS</button>
+      <p>CONTENIDO RECIBIDO: {{'{{contenido}}'}}</p>
+      <p>STATUS: {{'{{status}}'}}</p>
     </div>
     
     <script>
@@ -43,20 +49,25 @@
         $scope.nComunidad = "";
         $scope.nPrecio = "";
         $scope.nFecha = "";
+        $scope.nVivienda = "usada"
         $scope.cadenaTotal = function() {
-          return $scope.nComunidad + "," + $scope.nPrecio + "," + $scope.nFecha;
+          return $scope.nComunidad + "," + $scope.nPrecio + "," + $scope.nFecha + "," + $scope.nVivienda;
           };
         });
         
       app.controller('miAjax', function($scope, $http) {
-        $http.get("index")
-        .then(function(response) {
-            $scope.contenido = response.data;
-            $scope.status = response.status;
-        }, function(response) {
-            $scope.contenido = "Ha abido un problema de AJAX";
-            $scope.status = response.status;
-        });
+        $scope.contenido = '';
+        $scope.status = 'SIN RECIBIR';
+        $scope.recibir = function () {
+          $http.get("data")
+          .then(function(response) {
+              $scope.contenido = response.data;
+              $scope.status = response.status;
+          }, function(response) {
+              $scope.contenido = "Ha abido un problema de AJAX";
+              $scope.status = response.status;
+          });
+        }
       });        
     </script>
   </body>
